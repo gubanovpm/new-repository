@@ -58,7 +58,7 @@ int SolveSquare (double a, double b, double c,
 	
 	if (a <= 0+Precision && a >= 0-Precision) 
 	{
-		*x1 = -b/c;
+		*x1 = -c/b;
 		return -1;
 	}
 	else
