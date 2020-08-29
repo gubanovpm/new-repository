@@ -46,6 +46,10 @@ int main()
 	{
 		printf(" x1 = %.3lg\n x2 = %.3lg\n", x1, x2);
 	}
+	else if (nRoots == 255)
+	{
+		printf("Lyboe chislo uavlyaetsya kornem\n");
+	}
 	return 0; 
 	
 }
@@ -58,8 +62,22 @@ int SolveSquare (double a, double b, double c,
 	
 	if (a <= 0+Precision && a >= 0-Precision) 
 	{
-		*x1 = -c/b;
-		return -1;
+		if (b <= 0+Precision && b >= 0-Precision)
+		{
+			if (c <= 0+Precision && c >= 0-Precision)
+			{
+				return 255;
+			}
+			else
+			{
+				return 0;
+			}
+		}
+		else
+		{
+			*x1 = -c/b;
+			return -1;
+		}
 	}
 	else
 	{
